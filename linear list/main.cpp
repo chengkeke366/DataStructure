@@ -2,6 +2,8 @@
 #include "non_cyclic_link_list.h"
 #include "stack.h"
 #include "queue.h"
+#include "sort.h"
+
 //带头单向链表测试
 void listTest();
 //栈测试
@@ -11,13 +13,34 @@ void queueArrayTest();
 //链表队列
 void queueLinkedTest();
 
+//冒泡排序
+void bobbuleSortTest()
+{
+    int array[] = {21,32,11,33,4,21,54,123,12,23,121,22,32121,12112,3221,321};
+    int size = sizeof(array)/sizeof(array[0]);
+    printArray(array,size);
+    bubbleSort1(array,size);
+    printArray(array,size);
 
+    int array2[] = {3,2,1,4,5,6};
+    int size2 = sizeof(array2)/sizeof(array2[0]);
+    printArray(array2,size2);
+    bubbleSort2(array2,size2);
+    printArray(array2,size2);
+
+    int array3[] = {2,3,1,4,5,6,7,8,9};
+    int size3 = sizeof(array3) / sizeof(array3[0]);
+    bubbleSort3(array3, size3);
+    printArray(array3, size3);
+}
 
 int main() {
-    //listTest();
-    //stackTest();
-    //queueArrayTest();
-    queueLinkedTest();
+   //listTest();
+   //stackTest();
+   //queueArrayTest();
+   //queueLinkedTest();
+
+   bobbuleSortTest();
     return 0;
 }
 
@@ -155,7 +178,6 @@ void queueArrayTest() {
     std::cout<<"queue size is:" << size1<<std::endl;
     print_queue(q);
 }
-
 
 void queueLinkedTest() {
     linkedQueue::queue* q = linkedQueue::create_queue();
