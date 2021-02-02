@@ -46,7 +46,7 @@ int main() {
    // selectSortTest();
 
    //堆排序
-
+    heapSortTest();
     return 0;
 }
 
@@ -256,9 +256,10 @@ void selectSortTest(){
 
 void heapSortTest()
 {
-    int array[] = {9,8,7,6,5,4,3,2,1};
+    int array[] = {1,3,2,6,5,7,8,9,10,0};
     int size = sizeof(array) / sizeof(array[0]);
     heapSort(array, size);
-    printArray(array, size);
+    //最大堆构建后，按照数组顺序并不是有序的。
 
+    //按照优先队列，依次删除堆顶元素，可以获取堆的顺序
 }
