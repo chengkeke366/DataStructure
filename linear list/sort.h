@@ -12,5 +12,6 @@ void bubbleSort3(int array[], int size);
 
 void quickSort(int array[], int left, int right);
 void insertSort(int array[], int size);
+void selectSort(int array[], int size);
 
 #endif //LINEAR_LIST_SORT_H

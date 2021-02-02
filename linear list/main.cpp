@@ -19,7 +19,10 @@ void bobbuleSortTest();
 void quikSortTest();
 
 //插入排序
-void insertSort();
+void insertSortTest();
+
+//选择
+void selectSortTest();
 
 int main() {
     //listTest();
@@ -27,10 +30,17 @@ int main() {
     //queueArrayTest();
     //queueLinkedTest();
 
+    //冒泡
     //bobbuleSortTest();
+
+    //快排
     //quikSortTest();
 
-    insertSort();
+    //插入排序
+    //insertSortTest();
+
+    //选择排序
+    selectSortTest();
     return 0;
 }
 
@@ -194,7 +204,7 @@ void queueLinkedTest() {
 
 }
 
-//冒泡排序
+//排序
 void bobbuleSortTest()
 {
     int array[] = {21,32,11,33,4,21,54,123,12,23,121,22,32121,12112,3221,321};
@@ -223,11 +233,18 @@ void quikSortTest() {
     printArray(array, size);
 }
 
-void insertSort()
+void insertSortTest()
 {
     int array[] = {2,3,1,4,5,12,37,18,9};
     int size = sizeof(array) / sizeof(array[0]);
     insertSort(array,size);
+    printArray(array,size);
+}
+
+void selectSortTest(){
+    int array[] = {2,3,1,4,5,12,37,18,9};
+    int size = sizeof(array) / sizeof(array[0]);
+    selectSort(array,size);
     printArray(array,size);
 }
 
