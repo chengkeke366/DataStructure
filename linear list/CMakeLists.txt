@@ -8,4 +8,4 @@ add_executable(linear_list
         "non_cyclic_link_list.cpp" "non_cyclic_link_list.h"
         "stack.cpp" "stack.h"
         "queue.cpp" "queue.h"
-        "sort.h" "sort.cpp")
+        "sort.h" "bubbleSort.cpp" "quikSort.cpp")

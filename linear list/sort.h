@@ -10,4 +10,5 @@ void bubbleSort1(int array[], int size);
 void bubbleSort2(int array[], int size);
 void bubbleSort3(int array[], int size);
 
+void quickSort(int array[], int left, int right);
 #endif //LINEAR_LIST_SORT_H
