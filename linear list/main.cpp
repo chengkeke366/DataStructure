@@ -24,6 +24,9 @@ void insertSortTest();
 //选择
 void selectSortTest();
 
+//堆排序
+void heapSortTest();
+
 int main() {
     //listTest();
     //stackTest();
@@ -40,7 +43,10 @@ int main() {
     //insertSortTest();
 
     //选择排序
-    selectSortTest();
+   // selectSortTest();
+
+   //堆排序
+
     return 0;
 }
 
@@ -248,3 +254,11 @@ void selectSortTest(){
     printArray(array,size);
 }
 
+void heapSortTest()
+{
+    int array[] = {9,8,7,6,5,4,3,2,1};
+    int size = sizeof(array) / sizeof(array[0]);
+    heapSort(array, size);
+    printArray(array, size);
+
+}

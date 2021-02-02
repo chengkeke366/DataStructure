@@ -19,6 +19,7 @@ int getBorder(int array[], int left, int right)
     int pivot = array[left];
     while(left < right)
     {
+        //从右向左查找 小于等于 pivot的值，找到后跳出循环
         while(left < right)
         {
             if(array[right] > pivot)
@@ -29,6 +30,7 @@ int getBorder(int array[], int left, int right)
             }
         }
 
+        //从左往右查找大于pivot的值，找到后退出
         while(left < right)
         {
             if(array[left] <= pivot)
@@ -40,12 +42,14 @@ int getBorder(int array[], int left, int right)
             }
         }
 
-        if(left < right)
+        if(left < right)//查找结束，且两者还未重合，交换元素
         {
             quickSortSwap(array[left], array[right]);
             printArray(array, size);
         }
     }
+
+    //查找结束，left与right重合，交换pivot与重叠处的值
     quickSortSwap(array[pivotIndex], array[right]);
     printArray(array, size);
     return  left;
