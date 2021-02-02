@@ -18,6 +18,9 @@ void bobbuleSortTest();
 //快速排序
 void quikSortTest();
 
+//插入排序
+void insertSort();
+
 int main() {
     //listTest();
     //stackTest();
@@ -25,7 +28,9 @@ int main() {
     //queueLinkedTest();
 
     //bobbuleSortTest();
-    quikSortTest();
+    //quikSortTest();
+
+    insertSort();
     return 0;
 }
 
@@ -216,5 +221,13 @@ void quikSortTest() {
     printArray(array, size);
     quickSort(array,0,size-1);
     printArray(array, size);
+}
+
+void insertSort()
+{
+    int array[] = {2,3,1,4,5,12,37,18,9};
+    int size = sizeof(array) / sizeof(array[0]);
+    insertSort(array,size);
+    printArray(array,size);
 }
 

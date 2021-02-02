@@ -3,8 +3,7 @@
 //
 
 #include "sort.h"
-
-void swap(int &value1, int &value2)
+void quickSortSwap(int &value1, int &value2)
 {
     int temp = value1;
     value1 = value2;
@@ -43,11 +42,11 @@ int getBorder(int array[], int left, int right)
 
         if(left < right)
         {
-            swap(array[left], array[right]);
+            quickSortSwap(array[left], array[right]);
             printArray(array, size);
         }
     }
-    swap(array[pivotIndex], array[right]);
+    quickSortSwap(array[pivotIndex], array[right]);
     printArray(array, size);
     return  left;
 }
