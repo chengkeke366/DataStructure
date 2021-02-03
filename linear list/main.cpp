@@ -207,7 +207,6 @@ void queueLinkedTest() {
 
    size = element_size(q);
    std::cout<<"queue size is:" << size<<std::endl;
-
 }
 
 //排序
@@ -256,10 +255,8 @@ void selectSortTest(){
 
 void heapSortTest()
 {
-    int array[] = {1,3,2,6,5,7,8,9,10,0};
+    int array[] = {1,33,132,16,5,7,8,9,10,0};
     int size = sizeof(array) / sizeof(array[0]);
     heapSort(array, size);
-    //最大堆构建后，按照数组顺序并不是有序的。
-
-    //按照优先队列，依次删除堆顶元素，可以获取堆的顺序
+    printArray(array,size);
 }
