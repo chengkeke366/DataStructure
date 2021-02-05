@@ -17,4 +17,7 @@ void heapSort(int array[], int size);
 void addValue2Heap(int **array, int size, int value);
 int deleteValueFromHeap(int array[],int &size);
 void buildHeap(int array[], int size);
+
+void mergeSort(int array[], int left, int right);
+
 #endif //LINEAR_LIST_SORT_H

@@ -13,4 +13,5 @@ add_executable(linear_list
         "quikSort.cpp"
         "insertSort.cpp"
         "selectSort.cpp"
-        "heapSort.cpp")
+        "heapSort.cpp"
+        "mergeSort.cpp")

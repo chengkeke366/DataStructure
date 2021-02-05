@@ -27,27 +27,35 @@ void selectSortTest();
 //堆排序
 void heapSortTest();
 
+//归并排序
+void mergeSortTest();
+
+
 int main() {
-    //listTest();
-    //stackTest();
-    //queueArrayTest();
-    //queueLinkedTest();
 
-    //冒泡
-    //bobbuleSortTest();
+//listTest();
+//stackTest();
+//queueArrayTest();
+//queueLinkedTest();
 
-    //快排
-    //quikSortTest();
+//冒泡
+//bobbuleSortTest();
 
-    //插入排序
-    //insertSortTest();
+//快排
+//quikSortTest();
 
-    //选择排序
-   // selectSortTest();
+//插入排序
+//insertSortTest();
 
-   //堆排序
-    heapSortTest();
-    return 0;
+//选择排序
+// selectSortTest();
+
+//堆排序
+//heapSortTest();
+
+//归并排序
+mergeSortTest();
+return 0;
 }
 
 
@@ -258,5 +266,14 @@ void heapSortTest()
     int array[] = {1,33,132,16,5,7,8,9,10,0};
     int size = sizeof(array) / sizeof(array[0]);
     heapSort(array, size);
+    printArray(array,size);
+}
+void mergeSortTest()
+{
+    int array[] = {1,33,132,16,5,7,8,9,10,0};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    mergeSort(array,0,size-1);
+
     printArray(array,size);
 }
