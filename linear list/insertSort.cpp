@@ -16,7 +16,7 @@ void insertSort(int array[], int size)
     for(int i=0; i < size-1; i++)
     {
         int insertIndex = i+1;//第i+1个元素需要插入（第1次插入为准备插入a[1]个位置，第2次为准备插入第a[2]个位置）
-        for (int j = insertIndex; j >=0 ; --j) {
+        for (int j = insertIndex; j >0 ; --j) {//依次与前面元素比较
             if(array[j-1] > array[j])//与前面元素比较 插入
             {
                 insertSortswap(array[j], array[j-1]);

@@ -16,7 +16,7 @@ void shellSort(int array[], int size)
         for (int i = gap; i < size; ++i) {
             for (int j = i; j-gap >=0 ; j-=gap)
             {
-                if(array[j]<array[j-gap])
+                if(array[j-gap] > array[j])
                 {
                     shellSwapValue(array[j],array[j-gap]);
                 }else
