@@ -19,5 +19,6 @@ int deleteValueFromHeap(int array[],int &size);
 void buildHeap(int array[], int size);
 
 void mergeSort(int array[], int left, int right);
+void shellSort(int array[], int size);
 
 #endif //LINEAR_LIST_SORT_H

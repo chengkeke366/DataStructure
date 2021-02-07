@@ -12,49 +12,59 @@ void stackTest();
 void queueArrayTest();
 //链表队列
 void queueLinkedTest();
+
+
 //冒泡排序
 void bobbuleSortTest();
-
 //快速排序
 void quikSortTest();
-
 //插入排序
 void insertSortTest();
-
-//选择
+//选择排序
 void selectSortTest();
-
 //堆排序
 void heapSortTest();
-
 //归并排序
 void mergeSortTest();
+
+//希尔排序
+void shellSortTest();
+
+//计数排序
+
+//桶排序
+
+//基数排序
+
 
 
 int main() {
 
-//listTest();
-//stackTest();
-//queueArrayTest();
-//queueLinkedTest();
+    //listTest();
+    //stackTest();
+    //queueArrayTest();
+    //queueLinkedTest();
 
-//冒泡
-//bobbuleSortTest();
+    //冒泡
+    //bobbuleSortTest();
 
-//快排
-//quikSortTest();
+    //快排
+    //quikSortTest();
 
-//插入排序
-//insertSortTest();
+    //插入排序
+    //insertSortTest();
 
-//选择排序
-// selectSortTest();
+    //选择排序
+    // selectSortTest();
 
-//堆排序
-//heapSortTest();
+    //堆排序
+    //heapSortTest();
 
-//归并排序
-mergeSortTest();
+    //归并排序
+    //mergeSortTest();
+
+    //希尔排序
+    shellSortTest();
 return 0;
 }
 
@@ -274,6 +284,16 @@ void mergeSortTest()
     int size = sizeof(array) / sizeof(array[0]);
 
     mergeSort(array,0,size-1);
+
+    printArray(array,size);
+}
+
+void shellSortTest()
+{
+    int array[] = {1333,33,132,16,5,7,8,9,10,2};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    shellSort(array,size);
 
     printArray(array,size);
 }
