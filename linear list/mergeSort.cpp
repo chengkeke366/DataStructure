@@ -1,5 +1,7 @@
 #include "sort.h"
 #include <iostream>
+#include <vector>
+
 void merge(int array[], int left, int mid, int right)
 {
     int *arrayMerge = new int[right-left+1];
@@ -47,4 +49,66 @@ void mergeSort(int array[], int left, int right)
     mergeSort(array, left, mid);
     mergeSort(array, mid+1, right);
     merge(array,left,mid,right);
+}
+
+
+
+void merge2(std::vector<int> &nums, int left, int mid, int right)
+{
+
+    std::vector<int> result;
+
+    int indexVec1 = left;
+    int indexVec2 = mid+1;
+    while (indexVec1<=mid && indexVec2<=right)
+    {
+        if(nums[indexVec1]<=nums[indexVec2])
+        {
+            result.push_back(nums[indexVec1++]);
+        }else
+        {
+            result.push_back(nums[indexVec2++]);
+        }
+    }
+
+    while (indexVec1 <= mid)
+    {
+        result.push_back(nums[indexVec1++]);
+    }
+
+    while (indexVec2 <= right)
+    {
+        result.push_back(nums[indexVec2++]);
+    }
+    for (int i = 0; i <result.size() ; ++i) {
+        nums[i+left] = result[i];
+    }
+}
+
+void mergeSort2(std::vector<int>&nums, int left, int right)
+{
+    if(right-left<1)
+    {
+        return;
+    }
+    long mid = (right+left)/2;
+    mergeSort2(nums, left, mid);
+    mergeSort2(nums, mid+1, right);
+    merge2(nums, left, mid,right);
+
+    for (int i = 0; i < nums.size(); ++i) {
+        std::cout<<nums[i]<<"  ";
+    }
+    std::cout<<std::endl;
+}
+
+void mergeSort2(std::vector<int> &nums)
+{
+    int left =0;
+    int right = nums.size()-1;
+    if(right - left <1)
+    {
+        return ;
+    }
+    mergeSort2(nums, left,right);
 }

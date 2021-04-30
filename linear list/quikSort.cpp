@@ -3,6 +3,8 @@
 //
 
 #include "sort.h"
+#include <iostream>
+
 void quickSortSwap(int &value1, int &value2)
 {
     int temp = value1;
@@ -42,7 +44,7 @@ int getBorder(int array[], int left, int right)
             }
         }
 
-        if(left < right)//查找结束，且两者还未重合，交换元素
+        if(left < right)//交换元素
         {
             quickSortSwap(array[left], array[right]);
             printArray(array, size);
@@ -64,9 +66,47 @@ void quickSort(int array[], int left, int right)
         return;
     }
 
-    int partition = getBorder(array,left,right);
+    int partition = getBorder(array, left, right);
     quickSort(array, left, partition-1);
     quickSort(array, partition+1, right);
 }
 
 
+int getPartation(std::vector<int> &nums, int left, int right)
+{
+    int pivot = nums[left];
+    int rightIndex = right;
+    int leftIndex = left;//要注意left 不能+1，因为当只有两个变量时，如果+1，则可能出现交换异常的问题
+    while (leftIndex < rightIndex)
+    {
+        while (leftIndex < rightIndex && nums[rightIndex] > pivot)
+        {
+            rightIndex--;
+        }
+
+        while (leftIndex<rightIndex&& nums[leftIndex] <= pivot)
+        {
+            leftIndex++;
+        }
+
+        if(leftIndex < rightIndex)
+        {
+            std::swap(nums[leftIndex], nums[rightIndex]);
+        }
+    }
+
+    std::swap(nums[left], nums[leftIndex]);
+
+    return leftIndex;
+}
+
+void quickSortForCpp(std::vector<int> & nums, int left, int right)
+{
+    if(left >= right)
+    {
+        return;
+    }
+    long partition = getPartation(nums,left, right);
+    quickSortForCpp(nums, left, partition-1);
+    quickSortForCpp(nums, partition+1, right);
+}

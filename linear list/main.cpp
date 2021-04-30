@@ -3,6 +3,8 @@
 #include "stack.h"
 #include "queue.h"
 #include "sort.h"
+#include <vector>
+#include "SwordFingerOffer.h"
 
 //带头单向链表测试
 void listTest();
@@ -18,6 +20,7 @@ void queueLinkedTest();
 void bobbuleSortTest();
 //快速排序
 void quikSortTest();
+void quikSortTestForCpp();
 //插入排序
 void insertSortTest();
 //选择排序
@@ -26,7 +29,7 @@ void selectSortTest();
 void heapSortTest();
 //归并排序
 void mergeSortTest();
-
+void mergeSortTest2();//c++
 //希尔排序
 void shellSortTest();
 
@@ -36,9 +39,50 @@ void shellSortTest();
 
 //基数排序
 
+#include <stack>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+#include <cstring>
+
+#include <algorithm>
+
+
+int compress(vector<char>& chars) {
+
+    std::string result;
+    int number=0;
+    int start=0;
+    for (int i = 0; i < chars.size(); i++)
+    {
+        if(chars[start] == chars[i])
+        {
+            number++;
+        }else
+        {
+            result.push_back(chars[start]);
+            if(number > 1)
+            {
+                result.push_back('0'+number);
+            }
+            start = i;
+            number = 0;
+        }
+    }
+    for (int i = 0; i < result.size(); i++)
+    {
+        chars[i] = result[i];
+    }
+
+    return result.size()+1;
+}
 
 
 int main() {
+
+    std::vector<char> vec = {'a','a','b','b','c','c','c'};
+    compress(vec);
 
     //listTest();
     //stackTest();
@@ -62,10 +106,13 @@ int main() {
 
     //归并排序
     //mergeSortTest();
+    //mergeSortTest2();
 
+    //quikSortTestForCpp();
     //希尔排序
-    shellSortTest();
-return 0;
+    //shellSortTest();
+
+    return 0;
 }
 
 
@@ -90,6 +137,10 @@ void listTest()
     push_front(plistHead,node1);
     push_front(plistHead,node2);
     push_front(plistHead,node3);
+    printList(plistHead);
+
+    //翻转链表
+    reverseList(plistHead);
     printList(plistHead);
 
     //删除头部
@@ -232,9 +283,9 @@ void bobbuleSortTest()
 {
     int array[] = {21,32,11,33,4,21,54,123,12,23,121,22,32121,12112,3221,321};
     int size = sizeof(array)/sizeof(array[0]);
-    printArray(array,size);
-    bubbleSort1(array,size);
-    printArray(array,size);
+    printArray(array,  size);
+    bubbleSort1(array, size);
+    printArray(array,  size);
 
     int array2[] = {3,2,1,4,5,6};
     int size2 = sizeof(array2)/sizeof(array2[0]);
@@ -254,6 +305,15 @@ void quikSortTest() {
     printArray(array, size);
     quickSort(array,0,size-1);
     printArray(array, size);
+}
+
+void quikSortTestForCpp() {
+   std::vector<int> nums = {21,3,43,212,12,1,55};
+    quickSortForCpp(nums,0,nums.size()-1);
+    for (int i = 0; i < nums.size(); ++i) {
+        std::cout<<nums[i]<<"  ";
+    }
+    std::cout<<std::endl;
 }
 
 void insertSortTest()
@@ -286,6 +346,16 @@ void mergeSortTest()
     mergeSort(array,0,size-1);
 
     printArray(array,size);
+}
+
+void mergeSortTest2()
+{
+    std::vector<int> vec = {1,33,132,16,5,7,8,9,10,0};
+    mergeSort2(vec);
+    for (int i = 0; i < vec.size(); ++i) {
+        std::cout<<vec[i]<<"  ";
+    }
+    std::cout<<std::endl;
 }
 
 void shellSortTest()

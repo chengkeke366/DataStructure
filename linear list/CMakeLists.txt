@@ -15,5 +15,7 @@ add_executable(linear_list
         "selectSort.cpp"
         "heapSort.cpp"
         "mergeSort.cpp"
-        "shellSort.cpp")
+        "shellSort.cpp"
+        "tree.h" "tree.cpp"
+        SwordFingerOffer.cpp SwordFingerOffer.h)
 

@@ -42,6 +42,7 @@ void delete_back(listNode *list);
 bool delete_value(listNode *list, const DateType &value);
 void delete_all_value(listNode *list, const DateType &value);
 
+void reverseList(listNode *list);
 
 //节点个数
 int list_node_size(listNode *list);

@@ -151,6 +151,31 @@ void delete_all_value(listNode *list, const DateType &value) {
     }
 }
 
+void reverseList(listNode *list)
+{
+    if (!list)
+    {
+        return;
+    }
+    listNode *head = list;
+
+    //使用三个指针进行指针操作，需要注意三个变量的初值
+    listNode *previousNode = head;
+    listNode *reverseNode = head->next;
+    listNode *remainList = nullptr;
+
+    //注意循环条件，出循环时，一定是链表逆序完后了之后，即：reaminList为null的时候。此时previous指针为Null
+    while (reverseNode)
+    {
+        remainList = reverseNode->next;     //先将reverse节点之后的链表存储起来，防止reverse后丢失
+        reverseNode->next = previousNode;   //进行reverse:将reverse节点的指针域指向之前的节点
+        previousNode = reverseNode;         //previous指向移动后的节点
+        reverseNode = remainList;           //reverseNode指向下一个将要reverse的节点
+    }
+    //注意退出的这个条件
+    head->next= nullptr;
+    head = previousNode;
+}
 int list_node_size(listNode *list) {
     int i =0;
     while (list->next)
